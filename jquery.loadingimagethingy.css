@@ -335,9 +335,6 @@ transform:scale(.3)}
 
 
 .loadingimagethingy {
-	width: 128px;
-	height: 128px;
-
 	position:absolute; /*it can be fixed too*/
 	left:0; right:0;
 	top:0; bottom:0;
