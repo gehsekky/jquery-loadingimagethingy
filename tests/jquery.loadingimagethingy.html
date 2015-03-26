@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>loadingimagethingy tests</title>
+	<style type="text/css">
+		html, body {
+			height: 100%;
+			margin: 0px;
+			padding: 0px;
+		}
+		
+		#page_container {
+			height: 100%;
+			position: relative;
+		}
+		
+		#page_left_container {
+			float: left;
+			width: 50%;
+			height: 100%;
+			background-color: red;
+		}
+		
+		#page_right_container {
+			float: right;
+			width: 50%;
+			height: 100%;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div id="page_container">
+		<div id="page_left_container" class="half">
+		left
+		<input type="button" value="switch" class="button_switch" />
+		<input type="button" value="full body" class="button_fullbody" />
+		</div>
+		<div id="page_right_container" class="half">
+		right
+		<input type="button" value="switch" class="button_switch" />
+		<input type="button" value="both" class="button_both" />
+		</div>
+	</div>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../jquery.loadingimagethingy.css" />
+	<script type="text/javascript" src="../jquery.loadingimagethingy.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$(".button_switch").on("click", function () {
+				if ($("#page_right_container").data("plugin_loadingimagethingy")) {
+					$("#page_right_container").loadingimagethingy('disable');
+					$("#page_left_container").loadingimagethingy('enable');
+				} else {
+					$("#page_right_container").loadingimagethingy('enable');
+					$("#page_left_container").loadingimagethingy('disable');
+				}
+			});
+			
+			$(".button_fullbody").on("click", function () {
+				$("#page_right_container").loadingimagethingy("disable");
+				$("#page_left_container").loadingimagethingy("disable");
+				$("body").loadingimagethingy("enable");
+			});
+			
+			$(".button_both").on("click", function () {
+				$(".half").loadingimagethingy('enable');
+			});
+			
+			$("#page_left_container").loadingimagethingy('enable');
+		});
+	</script>
+</body>
+</html>
