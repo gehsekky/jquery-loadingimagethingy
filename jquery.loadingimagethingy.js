@@ -1,4 +1,8 @@
-
+/*
+ *  jquery.loadingimagethingy.js
+ *  a plugin that puts a loading icon and overlay into any specified element or window.
+ *  @author gehsekky
+ */
 ;(function ( $, window, document, undefined ) {
 	"use strict";
 
