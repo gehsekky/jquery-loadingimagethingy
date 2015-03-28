@@ -1,8 +1,7 @@
 # jquery-loadingimagethingy
 
 yet another jquery plugin to put a loading icon and backdrop into a specified 
-element. right now, it only supports css3 loading animations, but i'm thinking 
-of adding in image support for legacy browsers.
+element. right now, it supports css3 and image animations.
 
 ## usage
 
