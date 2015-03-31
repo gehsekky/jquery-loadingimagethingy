@@ -2,6 +2,7 @@
  *  jquery.loadingimagethingy.css
  *  styles for the various animations and overlay used in the plugin.
  *  @author gehsekky
+ * 	@version 1.1
  */
  
 /* css3 work taken from http://cssload.net/ */
@@ -339,8 +340,482 @@ transform:scale(.3)}
 }
 /* end circularg */
 
+/* start bubbling */
+.bubblingG {
+text-align: center;
+width:128px;
+height:80px;
+}
+
+.bubblingG span {
+display: inline-block;
+vertical-align: middle;
+width: 16px;
+height: 16px;
+margin: 40px auto;
+background: #000000;
+-moz-border-radius: 80px;
+-moz-animation: bubblingG 1.3s infinite alternate;
+-webkit-border-radius: 80px;
+-webkit-animation: bubblingG 1.3s infinite alternate;
+-ms-border-radius: 80px;
+-ms-animation: bubblingG 1.3s infinite alternate;
+-o-border-radius: 80px;
+-o-animation: bubblingG 1.3s infinite alternate;
+border-radius: 80px;
+animation: bubblingG 1.3s infinite alternate;
+}
+
+/* added span tag for increased specificity. do not remove for these 3 */
+span.bubblingG_1 { 
+-moz-animation-delay: 0s;
+-webkit-animation-delay: 0s;
+-ms-animation-delay: 0s;
+-o-animation-delay: 0s;
+animation-delay: 0s;
+}
+
+span.bubblingG_2 {
+-moz-animation-delay: 0.39s;
+-webkit-animation-delay: 0.39s;
+-ms-animation-delay: 0.39s;
+-o-animation-delay: 0.39s;
+animation-delay: 0.39s;
+}
+
+span.bubblingG_3 {
+-moz-animation-delay: 0.78s;
+-webkit-animation-delay: 0.78s;
+-ms-animation-delay: 0.78s;
+-o-animation-delay: 0.78s;
+animation-delay: 0.78s;
+}
+
+@-moz-keyframes bubblingG {
+	0% {
+	width: 16px;
+	height: 16px;
+	background-color:#000000;
+	-moz-transform: translateY(0);
+	}
+
+	100% {
+	width: 38px;
+	height: 38px;
+	background-color:#FFFFFF;
+	-moz-transform: translateY(-34px);
+	}
+
+}
+
+@-webkit-keyframes bubblingG {
+	0% {
+	width: 16px;
+	height: 16px;
+	background-color:#000000;
+	-webkit-transform: translateY(0);
+	}
+
+	100% {
+	width: 38px;
+	height: 38px;
+	background-color:#FFFFFF;
+	-webkit-transform: translateY(-34px);
+	}
+
+}
+
+@-ms-keyframes bubblingG {
+	0% {
+	width: 16px;
+	height: 16px;
+	background-color:#000000;
+	-ms-transform: translateY(0);
+	}
+
+	100% {
+	width: 38px;
+	height: 38px;
+	background-color:#FFFFFF;
+	-ms-transform: translateY(-34px);
+	}
+
+}
+
+@-o-keyframes bubblingG {
+	0% {
+	width: 16px;
+	height: 16px;
+	background-color:#000000;
+	-o-transform: translateY(0);
+	}
+
+	100% {
+	width: 38px;
+	height: 38px;
+	background-color:#FFFFFF;
+	-o-transform: translateY(-34px);
+	}
+
+}
+
+@keyframes bubblingG {
+	0% {
+	width: 16px;
+	height: 16px;
+	background-color:#000000;
+	transform: translateY(0);
+	}
+
+	100% {
+	width: 38px;
+	height: 38px;
+	background-color:#FFFFFF;
+	transform: translateY(-34px);
+	}
+
+}
+/* end bubbling */
+
+/* start circleg */
+.circleGContainer{
+width:150px;
+}
+
+.circleG{
+background-color:#FFFFFF;
+float:left;
+height:32px;
+margin-left:17px;
+width:32px;
+-moz-animation-name:bounce_circleG;
+-moz-animation-duration:1.9500000000000002s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-direction:normal;
+-moz-border-radius:21px;
+-webkit-animation-name:bounce_circleG;
+-webkit-animation-duration:1.9500000000000002s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:normal;
+-webkit-border-radius:21px;
+-ms-animation-name:bounce_circleG;
+-ms-animation-duration:1.9500000000000002s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-direction:normal;
+-ms-border-radius:21px;
+-o-animation-name:bounce_circleG;
+-o-animation-duration:1.9500000000000002s;
+-o-animation-iteration-count:infinite;
+-o-animation-direction:normal;
+-o-border-radius:21px;
+animation-name:bounce_circleG;
+animation-duration:1.9500000000000002s;
+animation-iteration-count:infinite;
+animation-direction:normal;
+border-radius:21px;
+}
+
+.circleG_1{
+-moz-animation-delay:0.39s;
+-webkit-animation-delay:0.39s;
+-ms-animation-delay:0.39s;
+-o-animation-delay:0.39s;
+animation-delay:0.39s;
+}
+
+.circleG_2{
+-moz-animation-delay:0.9099999999999999s;
+-webkit-animation-delay:0.9099999999999999s;
+-ms-animation-delay:0.9099999999999999s;
+-o-animation-delay:0.9099999999999999s;
+animation-delay:0.9099999999999999s;
+}
+
+.circleG_3{
+-moz-animation-delay:1.1700000000000002s;
+-webkit-animation-delay:1.1700000000000002s;
+-ms-animation-delay:1.1700000000000002s;
+-o-animation-delay:1.1700000000000002s;
+animation-delay:1.1700000000000002s;
+}
+
+@-moz-keyframes bounce_circleG{
+0%{
+}
+
+50%{
+background-color:#000000}
+
+100%{
+}
+
+}
+
+@-webkit-keyframes bounce_circleG{
+0%{
+}
+
+50%{
+background-color:#000000}
+
+100%{
+}
+
+}
+
+@-ms-keyframes bounce_circleG{
+0%{
+}
+
+50%{
+background-color:#000000}
+
+100%{
+}
+
+}
+
+@-o-keyframes bounce_circleG{
+0%{
+}
+
+50%{
+background-color:#000000}
+
+100%{
+}
+
+}
+
+@keyframes bounce_circleG{
+0%{
+}
+
+50%{
+background-color:#000000}
+
+100%{
+}
+
+}
+
+/* end circleg */
+
+/* start floating bars */
+.floatingBarsG{
+position:relative;
+width:103px;
+height:128px}
+
+.blockG{
+position:absolute;
+background-color:#FFFFFF;
+width:17px;
+height:40px;
+-moz-border-radius:14px 14px 0 0;
+-moz-transform:scale(0.4);
+-moz-animation-name:fadeG;
+-moz-animation-duration:1.04s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-direction:normal;
+-webkit-border-radius:14px 14px 0 0;
+-webkit-transform:scale(0.4);
+-webkit-animation-name:fadeG;
+-webkit-animation-duration:1.04s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:normal;
+-ms-border-radius:14px 14px 0 0;
+-ms-transform:scale(0.4);
+-ms-animation-name:fadeG;
+-ms-animation-duration:1.04s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-direction:normal;
+-o-border-radius:14px 14px 0 0;
+-o-transform:scale(0.4);
+-o-animation-name:fadeG;
+-o-animation-duration:1.04s;
+-o-animation-iteration-count:infinite;
+-o-animation-direction:normal;
+border-radius:14px 14px 0 0;
+transform:scale(0.4);
+animation-name:fadeG;
+animation-duration:1.04s;
+animation-iteration-count:infinite;
+animation-direction:normal;
+}
+
+.rotateG_01{
+left:0;
+top:47px;
+-moz-animation-delay:0.39s;
+-moz-transform:rotate(-90deg);
+-webkit-animation-delay:0.39s;
+-webkit-transform:rotate(-90deg);
+-ms-animation-delay:0.39s;
+-ms-transform:rotate(-90deg);
+-o-animation-delay:0.39s;
+-o-transform:rotate(-90deg);
+animation-delay:0.39s;
+transform:rotate(-90deg);
+}
+
+.rotateG_02{
+left:13px;
+top:17px;
+-moz-animation-delay:0.52s;
+-moz-transform:rotate(-45deg);
+-webkit-animation-delay:0.52s;
+-webkit-transform:rotate(-45deg);
+-ms-animation-delay:0.52s;
+-ms-transform:rotate(-45deg);
+-o-animation-delay:0.52s;
+-o-transform:rotate(-45deg);
+animation-delay:0.52s;
+transform:rotate(-45deg);
+}
+
+.rotateG_03{
+left:43px;
+top:5px;
+-moz-animation-delay:0.65s;
+-moz-transform:rotate(0deg);
+-webkit-animation-delay:0.65s;
+-webkit-transform:rotate(0deg);
+-ms-animation-delay:0.65s;
+-ms-transform:rotate(0deg);
+-o-animation-delay:0.65s;
+-o-transform:rotate(0deg);
+animation-delay:0.65s;
+transform:rotate(0deg);
+}
+
+.rotateG_04{
+right:13px;
+top:17px;
+-moz-animation-delay:0.78s;
+-moz-transform:rotate(45deg);
+-webkit-animation-delay:0.78s;
+-webkit-transform:rotate(45deg);
+-ms-animation-delay:0.78s;
+-ms-transform:rotate(45deg);
+-o-animation-delay:0.78s;
+-o-transform:rotate(45deg);
+animation-delay:0.78s;
+transform:rotate(45deg);
+}
+
+.rotateG_05{
+right:0;
+top:47px;
+-moz-animation-delay:0.9099999999999999s;
+-moz-transform:rotate(90deg);
+-webkit-animation-delay:0.9099999999999999s;
+-webkit-transform:rotate(90deg);
+-ms-animation-delay:0.9099999999999999s;
+-ms-transform:rotate(90deg);
+-o-animation-delay:0.9099999999999999s;
+-o-transform:rotate(90deg);
+animation-delay:0.9099999999999999s;
+transform:rotate(90deg);
+}
+
+.rotateG_06{
+right:13px;
+bottom:12px;
+-moz-animation-delay:1.04s;
+-moz-transform:rotate(135deg);
+-webkit-animation-delay:1.04s;
+-webkit-transform:rotate(135deg);
+-ms-animation-delay:1.04s;
+-ms-transform:rotate(135deg);
+-o-animation-delay:1.04s;
+-o-transform:rotate(135deg);
+animation-delay:1.04s;
+transform:rotate(135deg);
+}
+
+.rotateG_07{
+bottom:0;
+left:43px;
+-moz-animation-delay:1.1700000000000002s;
+-moz-transform:rotate(180deg);
+-webkit-animation-delay:1.1700000000000002s;
+-webkit-transform:rotate(180deg);
+-ms-animation-delay:1.1700000000000002s;
+-ms-transform:rotate(180deg);
+-o-animation-delay:1.1700000000000002s;
+-o-transform:rotate(180deg);
+animation-delay:1.1700000000000002s;
+transform:rotate(180deg);
+}
+
+.rotateG_08{
+left:13px;
+bottom:12px;
+-moz-animation-delay:1.3s;
+-moz-transform:rotate(-135deg);
+-webkit-animation-delay:1.3s;
+-webkit-transform:rotate(-135deg);
+-ms-animation-delay:1.3s;
+-ms-transform:rotate(-135deg);
+-o-animation-delay:1.3s;
+-o-transform:rotate(-135deg);
+animation-delay:1.3s;
+transform:rotate(-135deg);
+}
+
+@-moz-keyframes fadeG{
+0%{
+background-color:#000000}
+
+100%{
+background-color:#FFFFFF}
+
+}
+
+@-webkit-keyframes fadeG{
+0%{
+background-color:#000000}
+
+100%{
+background-color:#FFFFFF}
+
+}
+
+@-ms-keyframes fadeG{
+0%{
+background-color:#000000}
+
+100%{
+background-color:#FFFFFF}
+
+}
+
+@-o-keyframes fadeG{
+0%{
+background-color:#000000}
+
+100%{
+background-color:#FFFFFF}
+
+}
+
+@keyframes fadeG{
+0%{
+background-color:#000000}
+
+100%{
+background-color:#FFFFFF}
+
+}
+/* end floating bars */
+
 
 .loadingimagethingy {
+
+}
+
+.loadingimagethingy-inner-container {
 	position:absolute; /*it can be fixed too*/
 	left:0; right:0;
 	top:0; bottom:0;
@@ -360,6 +835,14 @@ transform:scale(.3)}
 	z-index: 10;
 }
 
-.loadingimagethingy-imagecontainer {
+.loadingimagethingy-image-container {
 	text-align: center;
+	position:absolute; /*it can be fixed too*/
+	left:0; right:0;
+	top:0; bottom:0;
+	margin:auto;
+}
+
+.loadingimagethingy-message {
+
 }

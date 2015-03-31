@@ -2,6 +2,7 @@
  *  jquery.loadingimagethingy.js
  *  a plugin that puts a loading icon and overlay into any specified element or window.
  *  @author gehsekky
+ * 	@version 1.1
  */
 ;(function ( $, window, document, undefined ) {
 	"use strict";
@@ -10,10 +11,11 @@
 		defaults = {
 			overlayBackgroundColor: "rgba(0,0,0,0.5)", // the background color of the overlay in any format you want
 			imageType: "css3", // css3|image
-			imagePath: "", // either null or the path as string
-			imageHeight: 128, // image height as int
-			imageWidth: 128, // image width as int
-			animation: "circularg", // floatingcircles|circularg
+			imagePath: "", // either empty string or the path to image file
+			imageHeight: 80, // image height as int (normally at 128, bubbling best set at 80, circleg at 32)
+			imageWidth: 128, // image width as int (normally 128, circleg best at 150, floatingbarsg best at 103)
+			animation: "bubbling", // floatingcircles|circularg|bubbling|circleg|floatingbarsg
+			messageHeightOffset: 50, // hack to get text under positioned image
 			message: "" // the text under the animation (if any)
 		};
 
@@ -35,7 +37,7 @@
 		enable: function () {
 			var $this = $(this.element),
 				template = '',
-				$thingy, $overlay;
+				$thingy, $overlay, $message, $container;
 			
 			// check to see if overlay already exists. if yes, do nothing.
 			if ($this.find(".loadingimagethingy-overlay").length === 0) {
@@ -68,6 +70,35 @@
 										<div class="circularG circularG_8"></div> \
 									</div>';
 								break;
+							case "bubbling":
+								template =
+									'<div class="bubblingG loadingimagethingy"> \
+										<span class="bubblingG_1"></span> \
+										<span class="bubblingG_2"></span> \
+										<span class="bubblingG_3"></span> \
+									</div>';
+								break;
+							case "circleg":
+								template = 
+									'<div class="circleGContainer loadingimagethingy"> \
+										<div class="circleG_1 circleG"></div> \
+										<div class="circleG_2 circleG"></div> \
+										<div class="circleG_3 circleG"></div> \
+									</div>';
+								break;
+							case "floatingbarsg":
+								template =
+									'<div class="floatingBarsG loadingimagethingy"> \
+										<div class="blockG rotateG_01"></div> \
+										<div class="blockG rotateG_02"></div> \
+										<div class="blockG rotateG_03"></div> \
+										<div class="blockG rotateG_04"></div> \
+										<div class="blockG rotateG_05"></div> \
+										<div class="blockG rotateG_06"></div> \
+										<div class="blockG rotateG_07"></div> \
+										<div class="blockG rotateG_08"></div> \
+									</div>';
+								break;
 							default:
 								throw new Error("Unknown animation specified: " + this.settings.animation);
 						}
@@ -86,9 +117,19 @@
 				}
 				
 				// create new overlay and append to container element.
-				$thingy = $(document.createElement("div")).addClass("loadingimagethingy-imagecontainer").append(template);
+				$thingy = $(document.createElement("div"))
+					.addClass("loadingimagethingy-image-container")
+					.css("width", this.settings.imageWidth)
+					.css("height", this.settings.imageHeight + this.settings.messageHeightOffset)
+					.append(template);
 				$overlay = $(document.createElement("div")).addClass("loadingimagethingy-overlay").css("background-color", this.settings.overlayBackgroundColor);
-				$this.append($overlay.append($thingy));
+
+				if (this.settings.message !== "") {
+					$message = $(document.createElement("div")).addClass("loadingimagethingy-message").append("<p>" + this.settings.message + "</p>");
+					$thingy.append($message);
+				}
+				$overlay.append($thingy);
+				$this.append($overlay);
 				
 				// set height and width
 				$this.find(".loadingimagethingy").css("height", this.settings.imageHeight).css("width", this.settings.imageWidth);
